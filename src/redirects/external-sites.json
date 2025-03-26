@@ -1,4 +1,6 @@
-"/.well-known/host-meta": "https://fed.brid.gy/.well-known/host-meta",
-"/.well-known/webfinger": "https://fed.brid.gy/.well-known/webfinger",
-"/.well-known/host-meta*": "https://fed.brid.gy/.well-known/host-meta*",
-"/.well-known/webfinger*": "https://fed.brid.gy/.well-known/webfinger*",
+{
+  "/.well-known/host-meta": "https://fed.brid.gy/.well-known/host-meta",
+  "/.well-known/webfinger": "https://fed.brid.gy/.well-known/webfinger",
+  "/.well-known/host-meta*": "https://fed.brid.gy/.well-known/host-meta*",
+  "/.well-known/webfinger*": "https://fed.brid.gy/.well-known/webfinger*",
+}
