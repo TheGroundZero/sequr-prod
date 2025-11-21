@@ -9,21 +9,21 @@
 <a href=https://sequr.be/ class="wm-name u-url p-name">DezeStijn</a></div><span class=wm-response><span class="wi wi-reply"><svg width="24" height="24" viewBox="0 0 24 24" class="feather feather-message-square"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
 <a class=u-in-reply-to href=https://aaronparecki.com/2018/06/30/11/your-first-webmention title="In reply to @aaronpk">@aaronpk</a></span><p class="wm-content e-content">Testing my very first webmention. Thank you @aaronpk for your tutorial!</p><p><a href=https://sequr.be/blog/2025/01/sending-my-first-webmention-from-scratch/ class="wm-timestamp u-url"><time class=dt-published datetime=2025-01-21T00:00:00+0100>Jan 21, 2025</time></a></p></div><p>To send a Webmention, it actually suffices to have a link to a site that supports receiving Webmentions.
 However, using some microformatting with <code>h-entry</code> and <code>h-card</code>, you can add context to them.
-In this case the Webmention is formatted as a reply but it could just as well be formatted as a <em>like</em> or a <em>repost</em>.</p><h3 id=hugo-shortcode>Hugo Shortcode</h3><p>To make my future life easier, I created a Hugo shortcode as well.</p><div class=tabs-container><div class=tabs role=tablist><button class="tab active" id=cefadb>
+In this case the Webmention is formatted as a reply but it could just as well be formatted as a <em>like</em> or a <em>repost</em>.</p><h3 id=hugo-shortcode>Hugo Shortcode</h3><p>To make my future life easier, I created a Hugo shortcode as well.</p><div class=tabs-container><div class=tabs role=tablist><button class="tab active" id=aecbdf>
 Using shortcode
 </button>
-<button class=tab id=fecdba>
+<button class=tab id=feabdc>
 Shortcode HTML
 </button>
-<button class=tab id=faebdc>
+<button class=tab id=bfaecd>
 Authors JSON
 </button>
-<button class=tab id=dfbeca>
-SVG partial</button></div><div class="tabcontent cefadb" style=display:block><p>The Webmention above is then constructed as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-html data-lang=html><span style=display:flex><span>{{ &lt; <span style=color:#f92672>webmention</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reply&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://aaronparecki.com/2018/06/30/11/your-first-webmention&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;@aaronpk&#34;</span> &gt; }}
+<button class=tab id=cefdab>
+SVG partial</button></div><div class="tabcontent aecbdf" style=display:block><p>The Webmention above is then constructed as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-html data-lang=html><span style=display:flex><span>{{ &lt; <span style=color:#f92672>webmention</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reply&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://aaronparecki.com/2018/06/30/11/your-first-webmention&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;@aaronpk&#34;</span> &gt; }}
 </span></span><span style=display:flex><span>Testing my very first webmention. Thank you @aaronpk for your tutorial!
 </span></span><span style=display:flex><span>{{ &lt; /<span style=color:#f92672>webmention</span> &gt; }}
 </span></span></code></pre></div><p><strong>Note:</strong><br>I had to add spaces between <code>{{ &lt;</code> and <code>> }}</code> to prevent Hugo from rendering the shortcode.
-So make sure you remove them if you&rsquo;re copy/pasting my example.</p></div><div class="tabcontent fecdba"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#75715e>&lt;!-- /layouts/shortcodes/webmention.html --&gt;</span>
+So make sure you remove them if you&rsquo;re copy/pasting my example.</p></div><div class="tabcontent feabdc"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#75715e>&lt;!-- /layouts/shortcodes/webmention.html --&gt;</span>
 </span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;webmention h-entry&#34;</span>&gt;
 </span></span><span style=display:flex><span>    {{ $author := lower (or ($.Page.Params.author) ($.Site.Params.author.name)) }}
 </span></span><span style=display:flex><span>    {{ with index $.Site.Data.authors $author }}
@@ -68,7 +68,7 @@ So make sure you remove them if you&rsquo;re copy/pasting my example.</p></div><
 </span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>a</span>&gt;
 </span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>p</span>&gt;
 </span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
-</span></span></code></pre></div></div><div class="tabcontent faebdc"><p>Notice how I&rsquo;m referencing <code>$.Site.Data.authors</code> in the shortcode.
+</span></span></code></pre></div></div><div class="tabcontent bfaecd"><p>Notice how I&rsquo;m referencing <code>$.Site.Data.authors</code> in the shortcode.
 This is using a JSON data file, which looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#75715e>// /data/authors.json
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>{
 </span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;dezestijn&#34;</span>: {
@@ -76,15 +76,15 @@ This is using a JSON data file, which looks like this:</p><div class=highlight><
 </span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;avatar&#34;</span>: <span style=color:#e6db74>&#34;/img/avatars/dezestijn.png&#34;</span>
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p><strong>Note:</strong><br>Don&rsquo;t forget to add the avatar image to the <code>/assets/img/avatars</code> folder.</p></div><div class="tabcontent dfbeca"><p>In the shortcode, I&rsquo;m also referencing a partial named <code>svg</code>.
+</span></span></code></pre></div><p><strong>Note:</strong><br>Don&rsquo;t forget to add the avatar image to the <code>/assets/img/avatars</code> folder.</p></div><div class="tabcontent cefdab"><p>In the shortcode, I&rsquo;m also referencing a partial named <code>svg</code>.
 This partial makes it easier to include inline SVGs.</p><p>To use it, store the SVGs you want in <code>/assets/icons/</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-html data-lang=html><span style=display:flex><span>{{ $svg := . }}
 </span></span><span style=display:flex><span>{{ return ((printf &#34;/assets/icons/%s.svg&#34; $svg | readFile) | safeHTML) }}
 </span></span></code></pre></div><p>You can then use the following template to include <code>/assets/icons/reply.svg</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-md data-lang=md><span style=display:flex><span>{{ partial &#34;svg&#34; &#34;reply&#34; }}
-</span></span></code></pre></div></div></div><h3 id=automated-sending>Automated sending</h3><p>To then actually notify other sites of the fact that I&rsquo;m mentioning them, I&rsquo;m using the <code>@remy/webmention</code> package in a GitHub workflow:</p><div class=tabs-container><div class=tabs role=tablist><button class="tab active" id=deacfb>
+</span></span></code></pre></div></div></div><h3 id=automated-sending>Automated sending</h3><p>To then actually notify other sites of the fact that I&rsquo;m mentioning them, I&rsquo;m using the <code>@remy/webmention</code> package in a GitHub workflow:</p><div class=tabs-container><div class=tabs role=tablist><button class="tab active" id=cadbef>
 .github/workflows/notify.yaml
 </button>
-<button class=tab id=decabf>
-package.json</button></div><div class="tabcontent deacfb" style=display:block><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
+<button class=tab id=aecfbd>
+package.json</button></div><div class="tabcontent cadbef" style=display:block><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
 </span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Notify</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>concurrency</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>group</span>: <span style=color:#ae81ff>${{ github.workflow }}-${{ github.ref }}</span>
@@ -127,7 +127,7 @@ package.json</button></div><div class="tabcontent deacfb" style=display:block><d
 </span></span><span style=display:flex><span>      
 </span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Send WebMentions</span>
 </span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>npm run wm:send</span>
-</span></span></code></pre></div></div><div class="tabcontent decabf"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span></code></pre></div></div><div class="tabcontent aecfbd"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
 </span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;sequr.be&#34;</span>,
 </span></span><span style=display:flex><span>  <span style=color:#75715e>// ...
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#f92672>&#34;engines&#34;</span>: {
