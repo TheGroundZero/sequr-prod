@@ -81,6 +81,7 @@ User-Agent: YouBot
 Disallow: /
 DisallowAITraining: /
 
-Sitemap: https://sequr.be/sitemap.xml
-Sitemap: https://sequr.be/en/sitemap.xml
-Sitemap: https://sequr.be/nl/sitemap.xml
+Sitemap: https://sequr.be/atom.xml
+Sitemap: https://sequr.be/nl/atom.xml
+Sitemap: https://sequr.be/blog/atom.xml
+Sitemap: https://sequr.be/nl/blog/atom.xml
